@@ -1,0 +1,265 @@
+@import 'reset';
+@import 'variaveis';
+@import 'mixins';
+
+/* Estilos Gerais */
+ 
+body {
+  font-family: inherit;
+  background-color: $background-body;
+  color: white;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: $preto-forte;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.header-logo {
+  flex-grow: 1;
+
+  & a {
+    padding: 0 10px;
+    color: $preto-medio;
+    font-size: $fonte-media;
+    font-weight: bold;
+
+  }
+  & a:hover {
+    color: $cor-secundaria;
+  }
+}
+
+.header-menu {
+
+  & ul li a {
+    color: $preto-medio;
+    font-size: $fonte-pequena;
+    text-transform: uppercase;
+    padding: 0 10px;
+  }
+  & ul li a:hover {
+    color: $cor-secundaria;
+  }
+}
+
+/* Corpo Principal */
+
+.corpo-principal {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.conteudo-lateral-esquerdo {
+  flex-grow: 1;
+  @include gutter;
+
+  & div h1,
+  p {
+    font-size: 48px;
+    color: $cor-primaria;
+  }
+
+  & div h1 span {
+    color: $cor-secundaria;
+    font-weight: bold;
+  }
+}
+
+.conteudo-lateral-direito {
+  @include gutter;
+}
+
+@media screen and (max-width: 760px) {
+  .conteudo-lateral-direito {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .conteudo-lateral-esquerdo div h1, .conteudo-lateral-esquerdo p {
+    font-size: $fonte-media; 
+
+  } 
+}
+
+.conteudo-lateral-direito img {
+  display: block;
+  max-width: 100%;
+}
+
+/* About */
+
+.about h1{ 
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: $cor-secundaria;
+    font-weight: bold; 
+}
+
+.about h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: $cor-primaria;
+  margin: 2px auto 10px auto;
+}
+
+.personal-description {
+  display: flex;
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #252627;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
+  color: $cor-primaria;
+  @include gutter;
+
+
+
+  & p {
+    font-size: $fonte-media;
+    margin-bottom: 20px; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .personal-description p {
+    font-size: $fonte-pequena;
+  } 
+}
+
+/* Skills */
+
+.skills {
+  margin-bottom: 60px;
+}
+
+.skills h1 {
+  text-align: center;
+  font-size: 36px; 
+  margin-bottom: 20px;
+  color: $cor-secundaria;
+  font-weight: bold;
+}
+
+.skills h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: $cor-primaria;
+  margin: 2px auto 10px auto;
+}
+
+.skills-texto {
+  display: flex;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  color: $cor-primaria;
+
+
+  & p {
+    font-size: $fonte-media;
+    margin-bottom: 20px;
+  } 
+}
+
+@media screen and (max-width: 480px) {
+  .skills-texto p {
+    font-size: $fonte-pequena;
+  } 
+}
+
+.skills-content {
+  display: flex;
+}
+
+.skills-data {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px 20px;
+}
+
+.skills-details {
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #252627;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
+
+  & p {
+    font-size: $fonte-pequena;
+    text-transform: uppercase;
+    margin-right: 40px;
+  }
+
+  & .progress {
+    border-radius: 0;
+
+    & .progress-bar-color {
+      background: $cor-secundaria;
+    }
+  }
+}
+
+.skills-img-content {
+  flex: 1;
+}
+
+.skills-img-content img {
+  display: block;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .skills-data {
+    flex: 1 1 100%;
+  }
+
+  .skills-img-content img {
+    display: none;
+  }
+}
+
+
+/* Fim Skills */
+
+/* Footer */
+
+.bg-footer {
+  background-color: $preto-forte;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.bg-footer p {
+  font-size: $fonte-pequena;
+  margin-top: 20px;
+}
+
+.footer ul li a {
+  padding: 10px;
+}
+
+.footer ul li a:hover {
+  color: transparent; /* Interferencia Bootstrap, provavelmente! */
+}
+
+.footer ul li a img {
+  width: 45px;
+}
