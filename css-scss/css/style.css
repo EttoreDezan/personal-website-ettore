@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul {
 body {
   font-family: inherit;
   background-color: #252728;
-  color: white;
+  color: #EEF0F0;
 }
 
 .container {
@@ -137,23 +137,6 @@ header {
 }
 
 /* About */
-.about h1 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #6B2F37;
-  font-weight: bold;
-}
-
-.about h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #EEF0F0;
-  margin: 2px auto 10px auto;
-}
-
 .personal-description {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,6 +162,13 @@ header {
   }
 }
 
+.personal-description h1 {
+  font-size: 2.25em;
+  margin-bottom: 20px;
+  color: #6B2F37;
+  font-weight: bold;
+}
+
 /* Skills */
 .skills {
   margin-bottom: 60px;
@@ -186,7 +176,7 @@ header {
 
 .skills h1 {
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25em;
   margin-bottom: 20px;
   color: #6B2F37;
   font-weight: bold;
@@ -283,10 +273,25 @@ header {
 
 /* Fim Skills */
 /* Footer */
+/* frase */
+.frase {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.125em;
+  font-style: italic;
+  margin: 20px 40px;
+}
+
+.frase :last-child {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+}
+
 .bg-footer {
   background-color: #181818;
   text-align: center;
-  padding: 60px 0;
+  padding: 20px 0;
 }
 
 .bg-footer p {
@@ -305,5 +310,12 @@ header {
 
 .footer ul li a img {
   width: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
