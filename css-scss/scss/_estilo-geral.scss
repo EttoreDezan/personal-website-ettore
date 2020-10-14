@@ -1,0 +1,276 @@
+/* Estilos Gerais do site */
+ 
+body {
+  font-family: inherit;
+  background-color: $background-body;
+  color: $primary-text-color;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: $header-footer-bg-color;  
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px; 
+}
+
+.header-logo {
+  flex-grow: 1;
+
+  & a {
+    padding: 0 10px;
+    color: $menu-text-color;
+    font-size: $medium-font;
+    font-weight: bold;
+
+  }
+  & a:hover {
+    color: $secondary-text-color;
+  }
+}
+
+.header-menu {
+
+  & ul li a {
+    color: $menu-text-color;
+    font-size: $small-font;
+    text-transform: uppercase;
+    padding: 0 10px;
+  }
+  & ul li a:hover {
+    color: $secondary-text-color;
+  }
+}
+
+/* Corpo Principal */
+
+.corpo-principal {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.conteudo-lateral-esquerdo {
+  flex-grow: 1;
+  @include gutter;
+
+  & div h1,
+  p {
+    font-size: 48px;
+    color: $primary-text-color;
+  }
+
+  & div h1 span {
+    color: $secondary-text-color;
+    font-weight: bold;
+  }
+}
+
+.conteudo-lateral-direito {
+  @include gutter;
+}
+
+@media screen and (max-width: 760px) {
+  .conteudo-lateral-direito {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .conteudo-lateral-esquerdo div h1, .conteudo-lateral-esquerdo p {
+    font-size: $medium-font; 
+
+  } 
+}
+
+.conteudo-lateral-direito img {
+  display: block;
+  max-width: 100%;
+}
+
+/* About */ 
+
+.personal-description {
+  display: flex;
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #252627;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
+  color: $primary-text-color;
+  @include gutter;
+
+
+
+  & p {
+    font-size: $medium-font;
+    margin-bottom: 20px; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .personal-description p {
+    font-size: $small-font;
+  } 
+}
+
+
+.personal-description h1{  
+  font-size: $big-font;
+  margin-bottom: 20px;
+  color: $secondary-text-color;
+  font-weight: bold; 
+} 
+
+/* Skills */
+
+.skills {
+  margin-bottom: 60px;
+}
+
+.skills h1 {
+  text-align: center;
+  font-size: $big-font; 
+  margin-bottom: 20px;
+  color: $secondary-text-color;
+  font-weight: bold;
+}
+
+.skills h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: $primary-text-color;
+  margin: 2px auto 10px auto;
+}
+
+.skills-texto {
+  display: flex;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  color: $primary-text-color; 
+
+  & p {
+    font-size: $medium-font;
+    margin-bottom: 20px;
+  } 
+}
+
+.container-progress-bar { 
+  height: 5px; 
+  background-color: #fff;
+}
+
+.progress-bar {
+  width: 30%;
+  height: 100%;
+  background-color: $secondary-text-color; 
+}
+
+@media screen and (max-width: 480px) {
+  .skills-texto p {
+    font-size: $small-font;
+  } 
+}
+
+.skills-content {
+  display: flex;
+}
+
+.skills-data {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px 20px;
+}
+  
+.skills-details {  
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #252627;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
+ 
+  & p {
+    font-size: $small-font;
+    text-transform: uppercase;
+    margin-right: 40px;   
+    margin-bottom: 10px;
+  }   
+}
+ 
+.skills-img-content {
+  flex: 1;
+}
+
+.skills-img-content img {
+  display: block;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .skills-data {
+    flex: 1 1 100%;
+  }
+
+  .skills-img-content img {
+    display: none;
+  }
+}
+
+
+/* Fim Skills */
+
+/* Footer */
+
+/* frase */ 
+
+.frase {   
+  text-align: center; 
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: $small-font; 
+  font-style: italic;  
+  margin: 20px 40px;
+  & :last-child  {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+  }
+} 
+
+.bg-footer {
+  background-color: $header-footer-bg-color;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.bg-footer p {
+  font-size: $small-font;
+  margin-top: 20px; 
+}
+
+.footer ul li a {
+  padding: 10px;
+}
+
+.footer ul li a:hover {
+  color: transparent; /* Interferencia Bootstrap, provavelmente! */
+}
+
+.footer ul li a img {
+  width: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer p {
+    @include gutter;
+  } 
+}  
