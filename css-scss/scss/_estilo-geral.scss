@@ -19,14 +19,14 @@ header {
 .header {
   display: flex;
   align-items: center;
-  padding: 30px; 
+  padding: 30px 0;   
 }
 
 .header-logo {
-  flex-grow: 1;
-
+  flex-grow: 1; 
+  margin-left: 10px;
   & a {
-    padding: 0 10px;
+    padding: 10px;
     color: $menu-text-color;
     font-size: $medium-font;
     font-weight: bold;
@@ -38,12 +38,12 @@ header {
 }
 
 .header-menu {
-
+  margin-right: 10px;
   & ul li a {
     color: $menu-text-color;
     font-size: $small-font;
     text-transform: uppercase;
-    padding: 0 10px;
+    padding: 10px;
   }
   & ul li a:hover {
     color: $secondary-text-color;
@@ -60,8 +60,8 @@ header {
 }
 
 .conteudo-lateral-esquerdo {
-  flex-grow: 1;
-  @include gutter;
+  flex-grow: 1; 
+  @include gutter; 
 
   & div h1,
   p {
@@ -75,21 +75,23 @@ header {
   }
 }
 
-.conteudo-lateral-direito {
-  @include gutter;
-}
-
 @media screen and (max-width: 760px) {
-  .conteudo-lateral-direito {
-    margin-top: 10px;
+  .conteudo-lateral-esquerdo { 
+    margin-left: 24px; /* Provavelmente por conta do efeito de desfoque!*/ 
   }
 }
+
+.conteudo-lateral-direito {
+  @include gutter; 
+} 
 
 @media screen and (max-width: 480px) {
   .conteudo-lateral-esquerdo div h1, .conteudo-lateral-esquerdo p {
     font-size: $medium-font; 
-
   } 
+  .conteudo-lateral-direito {
+    margin-top: 10px;
+  }
 }
 
 .conteudo-lateral-direito img {
@@ -106,30 +108,25 @@ header {
   background-color: #252627;
   box-shadow: 0 0 1.2rem rgba(0, 0, 0, .25);
   color: $primary-text-color;
-  @include gutter;
-
-
-
+  @include gutter; 
   & p {
     font-size: $medium-font;
     margin-bottom: 20px; 
   }
-}
-
+} 
 
 @media screen and (max-width: 480px) {
   .personal-description p {
     font-size: $small-font;
   } 
-}
-
+} 
 
 .personal-description h1{  
   font-size: $big-font;
   margin-bottom: 20px;
   color: $secondary-text-color;
   font-weight: bold; 
-} 
+}  
 
 /* Skills */
 
@@ -180,17 +177,17 @@ header {
 @media screen and (max-width: 480px) {
   .skills-texto p {
     font-size: $small-font;
+    @include gutter;
   } 
 }
 
 .skills-content {
-  display: flex;
+  display: flex; 
 }
 
-.skills-data {
-  flex: 1;
-  margin-right: 20px;
-  padding: 20px 20px;
+.skills-data {  
+  flex: 1; 
+  @include gutter;
 }
   
 .skills-details {  
@@ -207,26 +204,27 @@ header {
   }   
 }
  
-.skills-img-content {
-  flex: 1;
+.skills-img-content { 
+  @include gutter;  
 }
 
 .skills-img-content img {
   display: block;
   max-width: 100%;
-}
+} 
 
-@media screen and (max-width: 760px) {
-  .skills-data {
-    flex: 1 1 100%;
+@media screen and (max-width: 760px) {  
+  .skills-content { 
+    flex-direction: column; 
   }
-
-  .skills-img-content img {
-    display: none;
+  .skills-content img { 
+    margin: 0 auto;
+   }
+  .skills-img-content img { 
+    margin-top: 40px;
   }
 }
-
-
+ 
 /* Fim Skills */
 
 /* Footer */
